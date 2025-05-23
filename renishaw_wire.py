@@ -284,8 +284,9 @@ def read_OTHER_block(fileStream):
 	return remainingContents
 
 
-def wire_read(filename, as_numpy=False, as_pandas=False, map=False, verbose=False):
+def wire_read(filename, as_numpy=False, as_pandas=False, map_data=False, verbose=False):
 	assert as_numpy != as_pandas or as_numpy == as_pandas == False, 'cannot return multiple types'
+	assert map_data == False, 'maps currently not supported. sorry'
 
 	try:
 		fileStream = open(filename, mode='rb')
